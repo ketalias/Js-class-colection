@@ -145,6 +145,20 @@ function FindUser() {
     }
 }
 
+function FindUserCarAndColor() {
+    let car = document.getElementById("findcar").value;
+    let color = document.getElementById("findcolor").value;
+    let usersFind = users.getByCarAndColor(car, color);
+    if (usersFind.length > 0) { 
+        for (let i = 0; i < usersFind.length; i++) {
+            alert(usersFind[i].Info()); 
+        }
+    } else {
+        alert("No users");
+    }
+}
+
+
 function UpdateUser() {
     let code = document.getElementById("code").value;
     let user = users.getByCode(code);
@@ -160,7 +174,6 @@ function UpdateUser() {
         let tableBody = table.getElementsByTagName('tbody')[0];
         let rows = tableBody.getElementsByTagName('tr');
 
-        // Find and remove the existing row
         for (let row of rows) {
             if (row.cells[6].textContent == code) {
                 tableBody.removeChild(row);
@@ -168,7 +181,6 @@ function UpdateUser() {
             }
         }
 
-        // Insert the updated row
         let newRow = tableBody.insertRow();
 
         let cell1 = newRow.insertCell(0);
