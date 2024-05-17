@@ -9,6 +9,21 @@ body {
     flex-direction: column; 
     justify-content: space-between; 
 }
+#header{
+    display: flex;
+    justify-content: center; 
+    width: 90%;
+    max-width: 800px;
+    min-width: 650px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #0056b3;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+}
 
 .containerAddUpdate {
     display: flex;
@@ -21,7 +36,7 @@ body {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 10%;
+    margin-top: 3%;
 
 }
 
@@ -38,6 +53,15 @@ body {
 #search {
     display: flex;
     align-items: center; 
+}
+
+#searchByCarAndColor {
+    display: flex;
+    align-items: center; 
+}
+
+#searchByCarAndColor label{
+    margin: 15px;
 }
 
 #userIdInput {
@@ -127,6 +151,7 @@ input{
     border-radius: 4px;
     box-sizing: border-box;
     margin-bottom: 10px;
+
 }
 
 input:focus {
@@ -149,4 +174,11 @@ select:focus {
     outline: none;
     border-color: #007bff;
     box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25);
+}
+
+
+
+#userIdInput{
+    left: 0;
+    margin-left: 15px;
 }
