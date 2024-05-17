@@ -1,0 +1,152 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    flex-direction: column; 
+    justify-content: space-between; 
+}
+
+.containerAddUpdate {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between; 
+    width: 90%;
+    max-width: 800px;
+    min-width: 650px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10%;
+
+}
+
+.containerTable {
+    width: 90%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 3%;
+}
+
+#search {
+    display: flex;
+    align-items: center; 
+}
+
+#userIdInput {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    margin-right: 5px;
+    flex: 1;
+}
+
+#userIdInput:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25);
+}
+
+table {
+    width: 100%;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr{
+    height: auto;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+td:hover{
+    background-color: #73b7ffa7;
+}
+
+button {
+    margin: 5px;
+    padding: 8px 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.reset{
+    margin: 5px;
+    padding: 8px 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #54575b;
+    color: #fff;
+    cursor: pointer;
+     width: 70px;
+}
+
+.reset:hover{
+    background-color: #bc0000;
+   
+
+}
+
+input{
+    width: 200px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25);
+}
+
+select {
+    width: 100px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+ 
+}
+
+select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25);
+}

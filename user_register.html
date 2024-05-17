@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users Collection</title>
+    <script src="/Users/roman07/Js-class-colection/JS_File.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/jquery.inputmask.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/Users/roman07/Js-class-colection/style.css">
+
+    <script>
+        $(document).ready(function () {
+            $('#car_num').inputmask();
+            $('#ucar_num').inputmask();
+            $('#code').inputmask();
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class=
+    "containerAddUpdate">
+
+        <div id="addUser">
+
+            <h2>Add User Form</h2>
+
+            <form id="userForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="David"><br><br>
+
+                <label for="surname">Surname:</label>
+                <input type="text" id="surname" name="surname" placeholder="Goggins"><br><br>
+
+                <label for="fathername">Father's Name:</label>
+                <input type="text" id="fathername" name="fathername" placeholder="Jonsonovich"><br><br>
+
+
+                <label for="car_num">License plate:</label>
+                <input type="text" id="car_num" name="car_num" data-inputmask="'mask': 'AA9999AA'"
+                    placeholder="AA1234AA"><br><br>
+
+
+
+                <label for="car">Choose a car brand:</label>
+                <select id="car" name="car">
+                    <option value="Acura">Acura</option>
+                    <option value="Alfa Romeo">Alfa Romeo</option>
+                    <option value="Aston Martin">Aston Martin</option>
+                    <option value="Audi">Audi</option>
+                    <option value="Bentley">Bentley</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Bugatti">Bugatti</option>
+                    <option value="Buick">Buick</option>
+                    <option value="Cadillac">Cadillac</option>
+                    <option value="Chevrolet">Chevrolet</option>
+                    <option value="Chrysler">Chrysler</option>
+                    <option value="Citroën">Citroën</option>
+                    <option value="Dodge">Dodge</option>
+                    <option value="Ferrari">Ferrari</option>
+                    <option value="Fiat">Fiat</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Genesis">Genesis</option>
+                    <option value="GMC">GMC</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Hyundai">Hyundai</option>
+                    <option value="Infiniti">Infiniti</option>
+                    <option value="Jaguar">Jaguar</option>
+                    <option value="Jeep">Jeep</option>
+                    <option value="Kia">Kia</option>
+                    <option value="Lamborghini">Lamborghini</option>
+                    <option value="Land Rover">Land Rover</option>
+                    <option value="Lexus">Lexus</option>
+                    <option value="Lincoln">Lincoln</option>
+                    <option value="Lotus">Lotus</option>
+                    <option value="Maserati">Maserati</option>
+                    <option value="Mazda">Mazda</option>
+                    <option value="McLaren">McLaren</option>
+                    <option value="Mercedes-Benz">Mercedes-Benz</option>
+                    <option value="Mini">Mini</option>
+                    <option value="Mitsubishi">Mitsubishi</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Opel">Opel</option>
+                    <option value="Pagani">Pagani</option>
+                    <option value="Peugeot">Peugeot</option>
+                    <option value="Porsche">Porsche</option>
+                    <option value="Ram">Ram</option>
+                    <option value="Renault">Renault</option>
+                    <option value="Rolls-Royce">Rolls-Royce</option>
+                    <option value="Saab">Saab</option>
+                    <option value="Subaru">Subaru</option>
+                    <option value="Suzuki">Suzuki</option>
+                    <option value="Tesla">Tesla</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                    <option value="Volvo">Volvo</option>
+                </select><br><br>
+
+
+                <label for="color_car">Choose a car color:</label>
+                <select id="color_car" name="color_car">
+                    <option value="Black">Black</option>
+                    <option value="White">White</option>
+                    <option value="Silver">Silver</option>
+                    <option value="Gray">Gray</option>
+                    <option value="Red">Red</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Green">Green</option>
+                    <option value="Brown">Brown</option>
+                    <option value="Yellow">Yellow</option>
+                    <option value="Orange">Orange</option>
+                    <option value="Purple">Purple</option>
+                    <option value="Pink">Pink</option>
+                </select><br><br>
+
+                <input type="reset" value="Reset" class="reset">
+            </form>
+
+            <button onclick="createUser1()">Add user</button>
+
+        </div>
+
+
+        <div id="updateUser">
+
+            <h2>Update User Form</h2>
+
+            <form id="userForm">
+
+                <label for="code">Code:</label>
+                <input type="text" id="code" name="code" data-inputmask="'mask': '99999'" placeholder="00000"><br><br>
+
+                <label for="uname">Name:</label>
+                <input type="text" id="uname" name="uname" placeholder="David"><br><br>
+
+                <label for="usurname">Surname:</label>
+                <input type="text" id="usurname" name="usurname" placeholder="Goggins"><br><br>
+
+                <label for="ufathername">Father's Name:</label>
+                <input type="text" id="ufathername" name="ufathername" placeholder="Oleksandrovich"><br><br>
+
+                <label for="ucar_num">License plate:</label>
+                <input type="text" id="ucar_num" name="ucar_num" data-inputmask="'mask': 'AA9999AA'"
+                    placeholder="AA1234AA"><br><br>
+
+                <label for="ucar">Choose a car brand:</label>
+                <select id="ucar" name="ucar">
+                    <option value="Acura">Acura</option>
+                    <option value="Alfa Romeo">Alfa Romeo</option>
+                    <option value="Aston Martin">Aston Martin</option>
+                    <option value="Audi">Audi</option>
+                    <option value="Bentley">Bentley</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Bugatti">Bugatti</option>
+                    <option value="Buick">Buick</option>
+                    <option value="Cadillac">Cadillac</option>
+                    <option value="Chevrolet">Chevrolet</option>
+                    <option value="Chrysler">Chrysler</option>
+                    <option value="Citroën">Citroën</option>
+                    <option value="Dodge">Dodge</option>
+                    <option value="Ferrari">Ferrari</option>
+                    <option value="Fiat">Fiat</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Genesis">Genesis</option>
+                    <option value="GMC">GMC</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Hyundai">Hyundai</option>
+                    <option value="Infiniti">Infiniti</option>
+                    <option value="Jaguar">Jaguar</option>
+                    <option value="Jeep">Jeep</option>
+                    <option value="Kia">Kia</option>
+                    <option value="Lamborghini">Lamborghini</option>
+                    <option value="Land Rover">Land Rover</option>
+                    <option value="Lexus">Lexus</option>
+                    <option value="Lincoln">Lincoln</option>
+                    <option value="Lotus">Lotus</option>
+                    <option value="Maserati">Maserati</option>
+                    <option value="Mazda">Mazda</option>
+                    <option value="McLaren">McLaren</option>
+                    <option value="Mercedes-Benz">Mercedes-Benz</option>
+                    <option value="Mini">Mini</option>
+                    <option value="Mitsubishi">Mitsubishi</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Opel">Opel</option>
+                    <option value="Pagani">Pagani</option>
+                    <option value="Peugeot">Peugeot</option>
+                    <option value="Porsche">Porsche</option>
+                    <option value="Ram">Ram</option>
+                    <option value="Renault">Renault</option>
+                    <option value="Rolls-Royce">Rolls-Royce</option>
+                    <option value="Saab">Saab</option>
+                    <option value="Subaru">Subaru</option>
+                    <option value="Suzuki">Suzuki</option>
+                    <option value="Tesla">Tesla</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                    <option value="Volvo">Volvo</option>
+                </select><br><br>
+
+                <label for="ucolor_car">Choose a car color:</label>
+                <select id="ucolor_car" name="ucolor_car">
+                    <option value="Black">Black</option>
+                    <option value="White">White</option>
+                    <option value="Silver">Silver</option>
+                    <option value="Gray">Gray</option>
+                    <option value="Red">Red</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Green">Green</option>
+                    <option value="Brown">Brown</option>
+                    <option value="Yellow">Yellow</option>
+                    <option value="Orange">Orange</option>
+                    <option value="Purple">Purple</option>
+                    <option value="Pink">Pink</option>
+                </select><br><br>
+
+                <input type="reset" value="Reset" class="reset">
+
+
+            </form>
+
+            <button onclick="UpdateUser()">Update</button>
+
+        </div>
+
+    </div>
+    <div class="containerTable">
+        <div id="search">
+            <input type="text" id="userIdInput" placeholder="Enter user CODE to search">
+            <button onclick="FindUser()">Find</button>
+        </div>
+
+        <div id="users" class="userCards">
+            <table id="usersTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Father's Name</th>
+                        <th>Car Brand</th>
+                        <th>Car Number</th>
+                        <th>Car Color</th>
+                        <th>Code</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+
+</body>
+
+</html>
