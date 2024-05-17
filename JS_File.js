@@ -93,6 +93,7 @@ function getRandomNumber() {
 
 let users = new DaiUsers();
 
+
 function createUser1() {
     let name = document.getElementById("name").value;
     let surname = document.getElementById("surname").value;
@@ -125,7 +126,6 @@ function createUser1() {
     cell6.textContent = person.color_car;
     cell7.textContent = person.code;
 
-
     let deleteButton = document.createElement("button");
     deleteButton.textContent = "Delete";
     deleteButton.onclick = function () {
@@ -133,11 +133,7 @@ function createUser1() {
         newRow.remove();
     };
     cell8.appendChild(deleteButton);
-
 }
-
-
-
 
 function FindUser() {
     let id = document.getElementById("userIdInput").value;
@@ -153,17 +149,27 @@ function UpdateUser() {
     let code = document.getElementById("code").value;
     let user = users.getByCode(code);
     if (user) {
-
-        let table = document.getElementById("usersTable");
-        let tableBody = table.getElementsByTagName('tbody')[0];
-        let newRow = tableBody.insertRow();
-
         user.name = document.getElementById("uname").value;
         user.surname = document.getElementById("usurname").value;
         user.fathername = document.getElementById("ufathername").value;
         user.car = document.getElementById("ucar").value;
         user.car_num = document.getElementById("ucar_num").value;
         user.color_car = document.getElementById("ucolor_car").value;
+
+        let table = document.getElementById("usersTable");
+        let tableBody = table.getElementsByTagName('tbody')[0];
+        let rows = tableBody.getElementsByTagName('tr');
+
+        // Find and remove the existing row
+        for (let row of rows) {
+            if (row.cells[6].textContent == code) {
+                tableBody.removeChild(row);
+                break;
+            }
+        }
+
+        // Insert the updated row
+        let newRow = tableBody.insertRow();
 
         let cell1 = newRow.insertCell(0);
         let cell2 = newRow.insertCell(1);
@@ -174,15 +180,6 @@ function UpdateUser() {
         let cell7 = newRow.insertCell(6);
         let cell8 = newRow.insertCell(7);
 
-        let deleteButton = document.createElement("button");
-        deleteButton.textContent = "Delete";
-        deleteButton.onclick = function () {
-            users.remove(user.code);
-            newRow.remove();
-        };
-        cell8.appendChild(deleteButton);
-
-
         cell1.textContent = user.name;
         cell2.textContent = user.surname;
         cell3.textContent = user.fathername;
@@ -191,8 +188,14 @@ function UpdateUser() {
         cell6.textContent = user.color_car;
         cell7.textContent = user.code;
 
+        let deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.onclick = function () {
+            users.remove(user.code);
+            newRow.remove();
+        };
+        cell8.appendChild(deleteButton);
     } else {
         alert("User not found.");
     }
 }
-
