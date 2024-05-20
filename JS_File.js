@@ -86,7 +86,6 @@ function getRandomNumber() {
         generatedNumbers.push(randomNum);
         return randomNum;
     }
-
 }
 
 //створення юзера
@@ -149,9 +148,9 @@ function FindUserCarAndColor() {
     let car = document.getElementById("findcar").value;
     let color = document.getElementById("findcolor").value;
     let usersFind = users.getByCarAndColor(car, color);
-    if (usersFind.length > 0) { 
+    if (usersFind.length > 0) {
         for (let i = 0; i < usersFind.length; i++) {
-            alert(usersFind[i].Info()); 
+            alert(usersFind[i].Info());
         }
     } else {
         alert("No users");
